@@ -53,18 +53,18 @@ static Il2CppMethodPointer s_methodPointers[12] =
 };
 static const int32_t s_InvokerIndices[12] = 
 {
-	5611,
-	5468,
-	5611,
-	5611,
-	5611,
-	5611,
-	5611,
-	5611,
-	5611,
-	5611,
-	5611,
-	5611,
+	5619,
+	5476,
+	5619,
+	5619,
+	5619,
+	5619,
+	5619,
+	5619,
+	5619,
+	5619,
+	5619,
+	5619,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Facebook_Wit_TTS_Samples_CodeGenModule;
 const Il2CppCodeGenModule g_Facebook_Wit_TTS_Samples_CodeGenModule = 
