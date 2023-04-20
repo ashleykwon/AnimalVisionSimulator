@@ -1207,6 +1207,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Uri_get_OriginalStringSwitched_mBE7152D5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_IsNullOrEmpty_mEA9E3FB005AC28FE02E69FCF95A7B8456192B478 (String_t* ___value0, const RuntimeMethod* method) ;
 // System.String System.String::Concat(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m9E3155FB84015C823606188F53B47CB44C444991 (String_t* ___str00, String_t* ___str11, const RuntimeMethod* method) ;
+// System.String System.Uri::get_DnsSafeHost()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Uri_get_DnsSafeHost_mE5001E7AE7F1879A2059024EA06C9031F6320A2B (Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E* __this, const RuntimeMethod* method) ;
+// System.String System.DomainNameHelper::IdnEquivalent(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* DomainNameHelper_IdnEquivalent_mD8B0747AF5A6AE9DF74680C8FABB8081A49E9EDC (String_t* ___hostname0, const RuntimeMethod* method) ;
 // System.Boolean System.Uri::IsAsciiLetter(System.Char)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Uri_IsAsciiLetter_m54D66D3D390C364A49529D304526152E2339A140 (Il2CppChar ___character0, const RuntimeMethod* method) ;
 // System.Boolean System.Uri::IsAsciiLetterOrDigit(System.Char)
@@ -1365,8 +1369,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Uri_get_IsUnc_mB190B452D6A7B09FC8BDD967A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m093934F71A9B351911EE46311674ED463B180006 (String_t* ___str00, String_t* ___str11, String_t* ___str22, String_t* ___str33, const RuntimeMethod* method) ;
 // System.String System.Uri::get_Scheme()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Uri_get_Scheme_m29106D5109538220B22FC49DE7B44040E51B0F6F (Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E* __this, const RuntimeMethod* method) ;
-// System.String System.Uri::get_DnsSafeHost()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Uri_get_DnsSafeHost_mE5001E7AE7F1879A2059024EA06C9031F6320A2B (Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E* __this, const RuntimeMethod* method) ;
 // System.String System.String::Concat(System.String[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m647EBF831F54B6DF7D5AFA5FD012CF4EE7571B6A (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___values0, const RuntimeMethod* method) ;
 // System.Boolean System.Uri::IsBidiControlCharacter(System.Char)
@@ -3523,7 +3525,7 @@ IL_0072:
 		L_28 = Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57(L_27, NULL);
 		NullCheck(L_26);
 		RuntimeArray* L_29;
-		L_29 = VirtualFuncInvoker1< RuntimeArray*, Type_t* >::Invoke(45 /* System.Array System.Collections.ArrayList::ToArray(System.Type) */, L_26, L_28);
+		L_29 = VirtualFuncInvoker1< RuntimeArray*, Type_t* >::Invoke(47 /* System.Array System.Collections.ArrayList::ToArray(System.Type) */, L_26, L_28);
 		V_0 = ((StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)Castclass((RuntimeObject*)L_29, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var));
 	}
 
@@ -4956,6 +4958,34 @@ IL_013b:
 		Il2CppCodeGenWriteBarrier((void**)(&L_45->___DnsSafeHost_4), (void*)L_46);
 		String_t* L_47 = V_0;
 		return L_47;
+	}
+}
+// System.String System.Uri::get_IdnHost()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Uri_get_IdnHost_m327D96EB2F2B0E4BCE05EF9B5977C816CE433AE0 (Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E* __this, const RuntimeMethod* method) 
+{
+	String_t* V_0 = NULL;
+	{
+		String_t* L_0;
+		L_0 = Uri_get_DnsSafeHost_mE5001E7AE7F1879A2059024EA06C9031F6320A2B(__this, NULL);
+		V_0 = L_0;
+		uint64_t L_1;
+		L_1 = Uri_get_HostType_mA30DC51045EE5FE94B3CB84B0D361A9C28EE572E(__this, NULL);
+		if ((!(((uint64_t)L_1) == ((uint64_t)((int64_t)((int32_t)196608))))))
+		{
+			goto IL_001c;
+		}
+	}
+	{
+		String_t* L_2 = V_0;
+		String_t* L_3;
+		L_3 = DomainNameHelper_IdnEquivalent_mD8B0747AF5A6AE9DF74680C8FABB8081A49E9EDC(L_2, NULL);
+		V_0 = L_3;
+	}
+
+IL_001c:
+	{
+		String_t* L_4 = V_0;
+		return L_4;
 	}
 }
 // System.Boolean System.Uri::get_IsAbsoluteUri()
