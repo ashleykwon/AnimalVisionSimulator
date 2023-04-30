@@ -9,7 +9,7 @@ public class EnterCollaborativeView : MonoBehaviour
     // Start is called before the first frame update
     public void Update()
     {
-        bool triggerRight = OVRInput.Get(OVRInput.Button.One);
+        bool triggerRight = OVRInput.Get(OVRInput.Button.Two);
 
         if (triggerRight)
         {

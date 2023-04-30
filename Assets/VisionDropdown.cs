@@ -17,7 +17,7 @@ public class VisionDropdown : MonoBehaviour
         
     }
 
-    public Vector3 RGBToLMS(Vector3 RGBVal) // From https://arxiv.org/pdf/1711.10662.pdf
+    public static Vector3 RGBToLMS(Vector3 RGBVal) // From https://arxiv.org/pdf/1711.10662.pdf
     {
         float R = RGBVal[0];
         float G = RGBVal[1];
@@ -31,7 +31,7 @@ public class VisionDropdown : MonoBehaviour
         return LMS;
     }
 
-    public Vector3 LMSToRGB(Vector3 LMSVal)
+    public static Vector3 LMSToRGB(Vector3 LMSVal)
     {
         float L = LMSVal[0];
         float M = LMSVal[1];
@@ -46,7 +46,7 @@ public class VisionDropdown : MonoBehaviour
         return RGB;
     }
 
-    public Vector3 ProtanopiaSimulator(Vector3 LMSVal)
+    public static Vector3 ProtanopiaSimulator(Vector3 LMSVal)
     {
         float L = LMSVal[0];
         float M = LMSVal[1];
@@ -60,7 +60,7 @@ public class VisionDropdown : MonoBehaviour
         return ProtanopiaVec;
     }
 
-    public Vector3 DeuteranopiaSimulator(Vector3 LMSVal)
+    public static Vector3 DeuteranopiaSimulator(Vector3 LMSVal)
     {
         float L = LMSVal[0];
         float M = LMSVal[1];
