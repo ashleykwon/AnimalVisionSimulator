@@ -32462,6 +32462,8 @@ struct OVRTouchpadHelper_t34BB147432ABF475649A1354C7165DA00EA75FC9  : public Mon
 // ObjectDropdown
 struct ObjectDropdown_tD5AD47BDD70973E4F3D7D12C0836B8126152FBEB  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
+	// TMPro.TMP_Text ObjectDropdown::normalVisionTextTemplate
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___normalVisionTextTemplate_4;
 };
 
 // ObjectManipulator

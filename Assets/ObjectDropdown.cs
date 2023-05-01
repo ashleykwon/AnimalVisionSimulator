@@ -14,6 +14,8 @@ public class ObjectDropdown : MonoBehaviour
     // public TMPro.TMP_Dropdown visionDropdown;
     // int visionVal;
 
+    // For Passthrough mode
+    public TMP_Text normalVisionTextTemplate;
 
     void Start()
     {
@@ -21,6 +23,10 @@ public class ObjectDropdown : MonoBehaviour
         RGBProtanopiaSpawner();
         RGBSpawner();
         TritanopiaSpawner();
+
+        // TMP_Text normalVisionText = Instantiate(normalVisionTextTemplate);
+        // normalVisionText.text = "Normal Vision";
+        // normalVisionText.transform.position  = new Vector3(0, -10, 800);
 
     }
 

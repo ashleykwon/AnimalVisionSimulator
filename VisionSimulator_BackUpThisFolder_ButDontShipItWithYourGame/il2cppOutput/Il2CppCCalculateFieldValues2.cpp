@@ -23659,6 +23659,13 @@ struct OVROverlaySample_tBBD7602EAFB1E4F593A8EC7E30033DC414A661F8  : public Mono
 	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___spawnedCubes_27;
 };
 
+// ObjectDropdown
+struct ObjectDropdown_tD5AD47BDD70973E4F3D7D12C0836B8126152FBEB  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// TMPro.TMP_Text ObjectDropdown::normalVisionTextTemplate
+	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___normalVisionTextTemplate_4;
+};
+
 // ObjectManipulator
 struct ObjectManipulator_tA13D2F669B8A95F2E2D5B70B62944C65DB0B4C37  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -29002,6 +29009,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6086[4] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6087[1] = 
 {
 	static_cast<int32_t>(offsetof(NetworkPlayerSpawner_t1696AC41E19750BAE24DCA6F65B071BF438DC1D0, ___spawnedPlayerPrefab_5)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6088[1] = 
+{
+	static_cast<int32_t>(offsetof(ObjectDropdown_tD5AD47BDD70973E4F3D7D12C0836B8126152FBEB, ___normalVisionTextTemplate_4)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6094[1] = 
 {
 	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass41_0_tD03998B72130E379210125F837D005B365C1708B, ___handler_0)),};
