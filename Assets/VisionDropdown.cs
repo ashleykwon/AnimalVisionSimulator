@@ -127,5 +127,12 @@ public class VisionDropdown : MonoBehaviour
         return TritanopiaVec;
     }
 
+    public static Vector3 MonochromacySimulator(Vector3 RGBVal)
+    {
+        float gray = RGBVal[0]*0.2126f + RGBVal[1]*0.7152f + RGBVal[2]*0.0722f;
+        Vector3 GrayscaleVec = new Vector3(gray, gray, gray);
+        return GrayscaleVec;
+    }
+
 
 }

@@ -17,14 +17,14 @@ public class ObjectDropdown : MonoBehaviour
 
     void Start()
     {
-        RGBSpawner();
+        
         RGBProtanopiaSpawner();
-        DeuteranopiaSpawner();
+        RGBSpawner();
         TritanopiaSpawner();
 
     }
 
-    public void RGBSpawner()
+    public static void RGBSpawner()
     {  
         for (int x = 0; x <= 255; x+=50)
         {
@@ -42,7 +42,7 @@ public class ObjectDropdown : MonoBehaviour
         }
     }
 
-    public void RGBProtanopiaSpawner()
+    public static void RGBProtanopiaSpawner()
     {
         for (int x = 0; x <= 255; x+=50)
         {
@@ -64,7 +64,7 @@ public class ObjectDropdown : MonoBehaviour
         }
     }
 
-    public void DeuteranopiaSpawner()
+    public static void DeuteranopiaSpawner()
     {
         for (int x = 0; x <= 255; x+=50)
         {
@@ -86,7 +86,7 @@ public class ObjectDropdown : MonoBehaviour
         }
     }
 
-    public void TritanopiaSpawner()
+    public static void TritanopiaSpawner()
     {
         for (int x = 0; x <= 255; x+=50)
         {
@@ -99,7 +99,7 @@ public class ObjectDropdown : MonoBehaviour
                     Vector3 RGB = new Vector3(x/255f, y/255f, z/255f);
                     Vector3 XYZ = VisionDropdown.RGBToXYZ(RGB);
                     Vector3 LMS = VisionDropdown.XYZToLMS(XYZ);
-                    //Vector3 tritanopiaRGB = VisionDropdown.LMSToRGB(VisionDropdown.TritanopiaSimulator(LMS));
+
                     Vector3 tritanopiaRGB = VisionDropdown.TritanopiaSimulator(LMS);
                     float cieX = tritanopiaRGB[0]*1.9102f - 1.1121f*tritanopiaRGB[1] + 0.2019f*tritanopiaRGB[2];
                     float cieY = 0.3710f*tritanopiaRGB[0] + 0.6291f*tritanopiaRGB[1];
@@ -110,7 +110,28 @@ public class ObjectDropdown : MonoBehaviour
                     dataPoint.GetComponent<Renderer>().material.color = new Color(newTritanopiaRGB[0], newTritanopiaRGB[1], newTritanopiaRGB[2], 1f);
                     
                     
-                    dataPoint.transform.position = new Vector3(x+1000, y, z+800);
+                    dataPoint.transform.position = new Vector3(x+500, y, z+800);
+                    dataPoint.transform.localScale = new Vector3(10f, 10f, 10f);
+                }
+            }
+        }
+    }
+
+    public static void MonochromacySpawner()
+    {
+        for (int x = 0; x <= 255; x+=50)
+        {
+            for (int y = 0; y <= 255; y+=50)
+            {
+                for (int z = 0; z <= 255; z+=50)
+                {
+                    GameObject dataPoint = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+
+                    Vector3 RGB = new Vector3(x/255f, y/255f, z/255f);
+                    Vector3 monochromacyRGB = VisionDropdown.MonochromacySimulator(RGB);
+
+                    dataPoint.GetComponent<Renderer>().material.color = new Color(monochromacyRGB[0], monochromacyRGB[1], monochromacyRGB[2], 1f);
+                    dataPoint.transform.position = new Vector3(x-500, y, z+800);
                     dataPoint.transform.localScale = new Vector3(10f, 10f, 10f);
                 }
             }

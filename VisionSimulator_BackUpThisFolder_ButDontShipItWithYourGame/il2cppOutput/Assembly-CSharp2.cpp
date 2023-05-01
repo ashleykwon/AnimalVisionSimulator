@@ -19367,6 +19367,41 @@ IL_0062:
 		return L_14;
 	}
 }
+// UnityEngine.Vector3 VisionDropdown::MonochromacySimulator(UnityEngine.Vector3)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 VisionDropdown_MonochromacySimulator_m4B09912C2D4F8D676945A8712261C77FCC4FFA54 (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___RGBVal0, const RuntimeMethod* method) 
+{
+	float V_0 = 0.0f;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_2;
+	memset((&V_2), 0, sizeof(V_2));
+	{
+		// float gray = RGBVal[0]*0.2126f + RGBVal[1]*0.7152f + RGBVal[2]*0.0722f;
+		float L_0;
+		L_0 = Vector3_get_Item_m163510BFC2F7BFAD1B601DC9F3606B799CF199F2_inline((&___RGBVal0), 0, NULL);
+		float L_1;
+		L_1 = Vector3_get_Item_m163510BFC2F7BFAD1B601DC9F3606B799CF199F2_inline((&___RGBVal0), 1, NULL);
+		float L_2;
+		L_2 = Vector3_get_Item_m163510BFC2F7BFAD1B601DC9F3606B799CF199F2_inline((&___RGBVal0), 2, NULL);
+		V_0 = ((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(L_0, (0.212599993f))), ((float)il2cpp_codegen_multiply(L_1, (0.715200007f))))), ((float)il2cpp_codegen_multiply(L_2, (0.0722000003f)))));
+		// Vector3 GrayscaleVec = new Vector3(gray, gray, gray);
+		float L_3 = V_0;
+		float L_4 = V_0;
+		float L_5 = V_0;
+		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&V_1), L_3, L_4, L_5, NULL);
+		// return GrayscaleVec;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6 = V_1;
+		V_2 = L_6;
+		goto IL_003c;
+	}
+
+IL_003c:
+	{
+		// }
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_7 = V_2;
+		return L_7;
+	}
+}
 // System.Void VisionDropdown::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisionDropdown__ctor_mD2EF513D470D3668DFD76FBCAEE5057CDBD78ECD (VisionDropdown_t7769656CDD6580588139A00792C1CA678BF151F0* __this, const RuntimeMethod* method) 
 {
