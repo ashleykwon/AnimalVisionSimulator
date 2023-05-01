@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 342292314}
   - component: {fileID: 342292316}
   - component: {fileID: 342292315}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BackToHome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 475900573}
   - component: {fileID: 475900572}
   - component: {fileID: 475900575}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BackToHome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +817,8 @@ GameObject:
   - component: {fileID: 1744298015}
   - component: {fileID: 1744298014}
   - component: {fileID: 1744298018}
-  m_Layer: 5
+  - component: {fileID: 1744298019}
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -918,3 +919,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99fd83fab10f69145a860589e232b767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1744298019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744298013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aaf960227867044282d921171d2d7ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  pointer: {fileID: 0}
+  sortOrder: 0
