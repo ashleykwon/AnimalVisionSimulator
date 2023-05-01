@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using static ObjectDropdown;
 
@@ -46,6 +47,33 @@ public class VisionDropdown : MonoBehaviour
         return RGB;
     }
 
+    public static Vector3 RGBToXYZ(Vector3 RGB)
+    {
+        float R = RGB[0];
+        float G = RGB[1];
+        float B = RGB[2];
+
+        float X = 0.4124f*R + 0.3576f*G + 0.1804f*B;
+        float Y = 0.2126f*R + 0.7152f*G + 0.0722f*B;
+        float Z = 0.0193f*R + 0.1192f*G + 0.9503f*B;
+
+        Vector3 XYZ = new Vector3(X, Y, Z);
+        return XYZ;
+    }
+
+    public static Vector3 XYZToLMS(Vector3 XYZ)
+    {
+        float X = XYZ[0];
+        float Y = XYZ[1];
+        float Z = XYZ[2];
+
+        float L = 0.4002f*X + 0.7076f*Y -0.0808f*X;
+        float M = -0.2263f*X + 1.1653f*Y + 0.0457f*Z;
+        float S = 0.9182f*Z;
+        Vector3 LMS = new Vector3(L, M, S);
+        return LMS;
+    }
+
     public static Vector3 ProtanopiaSimulator(Vector3 LMSVal)
     {
         float L = LMSVal[0];
@@ -55,6 +83,11 @@ public class VisionDropdown : MonoBehaviour
         float Lp = 2.0234f*M -2.5258f*S;
         float Mp = M;
         float Sp = S;
+
+        if (Sp < 0)
+        {
+            Sp = 0;
+        }
 
         Vector3 ProtanopiaVec = new Vector3(Lp, Mp, Sp);
         return ProtanopiaVec;
@@ -70,8 +103,28 @@ public class VisionDropdown : MonoBehaviour
         float Md = 0.4942f*L + 1.2483f*S;
         float Sd = S;
 
+        if (Sd < 0)
+        {
+            Sd = 0;
+        }
+
         Vector3 DeuteranopiaVec = new Vector3(Ld, Md, Sd);
         return DeuteranopiaVec;
+    }
+
+    public static Vector3 TritanopiaSimulator(Vector3 LMSVal)
+    {// from http://mkweb.bcgsc.ca/colorblind/math.mhtml
+        float L = LMSVal[0];
+        float M = LMSVal[1];
+        float S = LMSVal[2];
+
+        float Lt = L;
+        float Mt = M;
+        float St = -0.8674f*L + 1.8673f*M;
+         //-0.395913f*L + 0.801109f*M;
+
+        Vector3 TritanopiaVec = new Vector3(Math.Max(Lt,0f), Math.Max(Mt,0f), Math.Max(St,0f));
+        return TritanopiaVec;
     }
 
 
