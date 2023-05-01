@@ -16,7 +16,7 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("right joystick triggered");
+        //Debug.Log("right joystick triggered");
         
         var joystickAxis = OVRInput.Get(OVRInput.RawAxis2D.RThumbstick, OVRInput.Controller.RTouch);
         float fixedY = player.position.y;

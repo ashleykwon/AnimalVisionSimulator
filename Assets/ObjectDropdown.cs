@@ -46,7 +46,7 @@ public class ObjectDropdown : MonoBehaviour
                     GameObject dataPoint = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 
                     dataPoint.GetComponent<Renderer>().material.color = new Color(x/255f, y/255f, z/255f, 1f);
-                    dataPoint.transform.position = new Vector3(x, y, z+200);
+                    dataPoint.transform.position = new Vector3(x, y, z+500);
                     dataPoint.transform.localScale = new Vector3(10f, 10f, 10f);
                     Debug.Log(dataPoint.GetComponent<Renderer>().material.color);
                 }
@@ -69,7 +69,7 @@ public class ObjectDropdown : MonoBehaviour
                     Vector3 protanopiaRGB = VisionDropdown.LMSToRGB(VisionDropdown.ProtanopiaSimulator(LMS));
 
                     dataPoint.GetComponent<Renderer>().material.color = new Color(protanopiaRGB[0], protanopiaRGB[1], protanopiaRGB[2], 1f);
-                    dataPoint.transform.position = new Vector3(x-500, y, z+200);
+                    dataPoint.transform.position = new Vector3(x-500, y, z+500);
                     dataPoint.transform.localScale = new Vector3(10f, 10f, 10f);
                     Debug.Log(dataPoint.GetComponent<Renderer>().material.color);
                 }
@@ -92,7 +92,7 @@ public class ObjectDropdown : MonoBehaviour
                     Vector3 deuteranopiaRGB = VisionDropdown.LMSToRGB(VisionDropdown.DeuteranopiaSimulator(LMS));
 
                     dataPoint.GetComponent<Renderer>().material.color = new Color(deuteranopiaRGB[0], deuteranopiaRGB[1], deuteranopiaRGB[2], 1f);
-                    dataPoint.transform.position = new Vector3(x+500, y, z+200);
+                    dataPoint.transform.position = new Vector3(x+500, y, z+500);
                     dataPoint.transform.localScale = new Vector3(10f, 10f, 10f);
                     Debug.Log(dataPoint.GetComponent<Renderer>().material.color);
                 }
