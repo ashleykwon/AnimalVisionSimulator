@@ -8,10 +8,7 @@ using static VisionDropdown;
 
 public class ObjectDropdown : MonoBehaviour
 {
-    // public TMPro.TMP_Dropdown objectDropdown;
 
-    // // Get the current vision mode
-    // public TMPro.TMP_Dropdown visionDropdown;
     // int visionVal;
 
     // For Passthrough mode
@@ -24,9 +21,17 @@ public class ObjectDropdown : MonoBehaviour
         RGBSpawner();
         TritanopiaSpawner();
 
-        // TMP_Text normalVisionText = Instantiate(normalVisionTextTemplate);
-        // normalVisionText.text = "Normal Vision";
-        // normalVisionText.transform.position  = new Vector3(0, -10, 800);
+        TMP_Text normalVisionText = Instantiate(normalVisionTextTemplate);
+        normalVisionText.text = "Normal Vision";
+        normalVisionText.transform.position  = new Vector3(0, -10, 800);
+
+        TMP_Text deuteranopiaText = Instantiate(normalVisionTextTemplate);
+        deuteranopiaText.text = "Blue-Blind";
+        deuteranopiaText.transform.position  = new Vector3(500, -10, 800);
+
+        TMP_Text monochromacyText = Instantiate(normalVisionTextTemplate);
+        monochromacyText.text = "Red-Blind";
+        monochromacyText.transform.position  = new Vector3(-500, -10, 800);
 
     }
 
